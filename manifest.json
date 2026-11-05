@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "MapleScouter Autofill",
+  "version": "1.2.1",
+  "description": "Paste MapleStory (GMS) stat and HEXA Matrix screenshots; the values are read on your computer and typed into MapleScouter's manual input page.",
+  "icons": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "action": { "default_title": "MapleScouter Autofill", "default_icon": { "16": "icons/icon16.png", "48": "icons/icon48.png" } },
+  "side_panel": { "default_path": "sidepanel.html" },
+  "background": { "service_worker": "background.js" },
+  "permissions": ["sidePanel", "storage", "tabs", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [{
+    "matches": ["https://maplescouter.com/*", "https://*.maplescouter.com/*"],
+    "js": ["lib/classes.js", "content.js"],
+    "run_at": "document_idle"
+  }],
+  "content_security_policy": { "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'" }
+}

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MapleScouter Autofill</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <header>
+    <div class="brand"><span class="leaf">✦</span> MapleScouter Autofill</div>
+    <button id="resetBtn" class="ghost small" title="Clear screenshots and start over">Start over</button>
+  </header>
+
+  <section class="card" id="classCard">
+    <div class="step-head"><span class="num">1</span><h2>Your class</h2></div>
+    <select id="classSelect"></select>
+    <p class="hint" id="classInfo"></p>
+    <p class="hint" id="classSync"></p>
+  </section>
+
+  <section class="card" id="stepsCard">
+    <div class="step-head"><span class="num">2</span><h2>Screenshots</h2></div>
+    <ol id="steps" class="steps"></ol>
+    <div id="dropZone" class="drop" tabindex="0">
+      <div class="drop-main">Press <kbd>Ctrl</kbd>+<kbd>V</kbd> to paste a screenshot</div>
+      <div class="drop-sub">or drop image files here · <label class="link">browse<input id="fileInput" type="file" accept="image/*" multiple hidden></label></div>
+      <div class="drop-sub">Any order is fine — each screenshot is recognised automatically.</div>
+    </div>
+    <div id="shots" class="shots"></div>
+  </section>
+
+  <section class="card hidden" id="reviewCard">
+    <div class="step-head"><span class="num">3</span><h2>Check the values</h2></div>
+    <p class="hint">Amber fields were hard to read, or (⟳) changed between your screenshots — hover for details. Take screenshots without temporary buffs if you want unbuffed numbers. Everything is editable.</p>
+    <div id="popupTable"></div>
+    <div id="statGrid" class="grid"></div>
+  </section>
+
+  <section class="card hidden" id="hexaCard">
+    <div class="step-head"><span class="num">4</span><h2>HEXA Enhancement</h2></div>
+    <div class="row gap">
+      <button id="scanBtn" class="secondary">Read MapleScouter's HEXA slots</button>
+      <label class="inline">Ignore last <input id="ignoreLast" type="number" min="0" max="10" value="2"> slots</label>
+    </div>
+    <div id="permBox" class="notice hidden"></div>
+    <p class="hint" id="hexaHint">Each in-game core is matched to a MapleScouter slot by its position in the HEXA Matrix (hover a core to see how). Fix any wrong pick with its drop-down — your fix is remembered for this class.</p>
+    <div id="cores" class="cores"></div>
+  </section>
+
+  <section class="card sticky" id="fillCard">
+    <div id="siteStatus" class="hint"></div>
+    <button id="fillBtn" class="primary" disabled>Fill MapleScouter</button>
+    <div id="report" class="report"></div>
+    <button id="diagBtn" class="ghost small" title="Copies what the extension sees on the MapleScouter page, to report a problem">Copy diagnostics</button>
+  </section>
+
+  <script src="lib/imageproc.js"></script>
+  <script src="lib/assign.js"></script>
+  <script src="lib/classes.js"></script>
+  <script src="lib/parse.js"></script>
+  <script src="sidepanel.js"></script>
+</body>
+</html>
