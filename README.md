@@ -1,4 +1,4 @@
-# MapleScouter Autofill (for Chrome)
+# MapleScouter (semi) Autofill (for Chrome)
 
 Paste MapleStory screenshots and have the numbers typed into
 <https://maplescouter.com/en/manual/input> for you.
