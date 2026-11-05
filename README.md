@@ -1,5 +1,7 @@
 # MapleScouter (semi) Autofill (for Chrome)
 
+thanks claude (100% vibecoded)
+
 Paste MapleStory screenshots and have the numbers typed into
 <https://maplescouter.com/en/manual/input> for you.
 
