@@ -1,8 +1,7 @@
-# MapleScouter Autofill (Chrome extension)
+# MapleScouter Autofill (for Chrome)
 
-Paste MapleStory (GMS) screenshots and have the numbers typed into
-<https://maplescouter.com/en/manual/input> for you. Everything is read **on your computer** —
-no screenshot ever leaves the browser.
+Paste MapleStory screenshots and have the numbers typed into
+<https://maplescouter.com/en/manual/input> for you.
 
 ## Install
 
@@ -18,7 +17,7 @@ no screenshot ever leaves the browser.
 2. **Step 1 (Your class)** follows the class selected on MapleScouter automatically (also when you
    change it there). If it can't tell, pick it in the panel.
 3. Paste screenshots with **Ctrl+V** (Win+Shift+S → drag a box → Ctrl+V in the panel). You can
-   also drop files or browse. Order doesn't matter; each one is recognised automatically:
+   also drop files or browse. Order doesn't matter; each one is recognized automatically:
    - **Step 1** — STAT window with your **main stat's** STAT INFO pop-out open (click INT for Kanna).
    - **Step 2** — STAT window with each **secondary stat's** pop-out (LUK for Kanna; Shadower,
      Dual Blade and Cadena need both STR and DEX).
@@ -35,31 +34,13 @@ no screenshot ever leaves the browser.
    ignored by default (change "Ignore last").
 6. Press **Fill MapleScouter**. Filled boxes flash green on the page.
 
-## How it reads the screenshots
-
-- Full-screen screenshots: the STAT window is found first (by its panel colours, or by its labels if
-  that fails) and only that window plus the STAT INFO column is read, so other windows, chat, name
-  tags, skill effects and the Ability window don't interfere. Several OCR engines run in parallel.
-- Stat window: a digit recogniser built for MapleStory's stat font, with Tesseract (bundled, WASM)
-  as a second opinion and for labels. Text is separated from the panel by contrast with its
-  surroundings, so the map behind the window doesn't matter. Tested on tinted, darker, JPEG,
-  125 %-scaled and busy-background variants.
-- The pop-out's stat is identified by matching its *Current Value* to the stat-window total.
-- HEXA levels are found as two-digit labels on the pills above each core and read with a pixel-font
-  matcher that renders each digit at the screenshot's own size (works at 100–200 % display scaling
-  and in JPEGs). The labels are then snapped onto the matrix's fixed lattice.
-
 ## If something doesn't fill
 
 - The panel lists anything it couldn't find on the page. MapleScouter is found by its visible
   labels (e.g. "Final Damage", "HEXA Enhancement"), so a label rename on the site would show up there.
 - HEXA icons are loaded from the page, by direct download, or by cropping a capture of the visible
-  MapleScouter tab, whichever works. If some still can't be loaded the panel says which slots;
+  MapleScouter tab, whichever works. If some still can't be loaded, the panel says which slots;
   pick those with the drop-downs.
 - **Copy diagnostics** (bottom of the panel) copies what the extension sees on the page — paste it
   into a bug report.
 - A class missing or changed? Edit `lib/classes.js` and reload the extension.
-
-## Licences
-
-Bundles tesseract.js-core and the Tesseract English model (Apache-2.0).
