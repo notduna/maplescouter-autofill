@@ -20,10 +20,9 @@ Paste MapleStory screenshots and have the numbers typed into
    change it there). If it can't tell, pick it in the panel.
 3. Paste screenshots with **Ctrl+V** (Win+Shift+S → drag a box → Ctrl+V in the panel). You can
    also drop files or browse. Order doesn't matter; each one is recognized automatically:
-   - **Step 1** — STAT window with your **main stat's** STAT INFO pop-out open (click INT for Kanna).
-   - **Step 2** — STAT window with each **secondary stat's** pop-out (LUK for Kanna; Shadower,
-     Dual Blade and Cadena need both STR and DEX).
-   - **Step 3** — STAT window with the **ATTACK POWER / MAGIC ATT** pop-out (MAGIC ATT for magicians),
+   - **Step 1** — STAT window with your **main stat's** STAT INFO pop-out open.
+   - **Step 2** — STAT window with each **secondary stat's** pop-out.
+   - **Step 3** — STAT window with the **ATTACK POWER / MAGIC ATT** pop-out,
      for the attack row of MapleScouter's stat table.
    - **Step 4** — the **HEXA Matrix** window (a full-screen shot that also shows the STAT window
      is read as both).
